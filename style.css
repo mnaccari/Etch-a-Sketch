@@ -1,0 +1,10 @@
+#container {
+    border-color: black;
+    border-style: solid;
+    width: 800px;
+    height: 800px;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+}
+
