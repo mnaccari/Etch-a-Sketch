@@ -4,17 +4,17 @@ const sizeBtn = document.querySelector('#size');
 
 let mouseDown = false;
 
-document.body.onmousedown = () => (mouseDown = true);
-document.body.onmouseup = () => (mouseDown = false);
+document.body.onpointerdown = () => (mouseDown = true);
+document.body.onpointerup = () => (mouseDown = false);
 
 for (i=0; i<256; i++){
     let square = document.createElement('div');
-    square.addEventListener("mouseover", draw);
+    square.addEventListener("pointerover", draw);
     container.appendChild(square);
 }
 
 function draw(e){
-    if(e.type === "mouseover" && !mouseDown) return;
+    if(e.type === "pointerover" && !mouseDown) return;
     e.target.style.backgroundColor = "black";
 }
 
@@ -33,7 +33,7 @@ function resize(){
     container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
     for (i=0; i<size*size; i++){
         let square = document.createElement('div');
-        square.addEventListener("mouseover", draw);
+        square.addEventListener("pointerover", draw);
         container.appendChild(square);
     }
 }
